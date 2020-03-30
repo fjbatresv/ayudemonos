@@ -1,2 +1,3 @@
-# ayudemonos
-Project idea for share resource and knowledge on the crisis for the COVID-19
+# Ayudemonos
+
+Project/Idea for share resources and knowledge on the crisis for the COVID19 pandemic.
