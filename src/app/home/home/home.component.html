@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row-cols-1">
+        <mat-card>
+            <mat-card-title>
+                ¿Qué Necesitas?
+            </mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <mat-form-field class="col">
+                        <input [(ngModel)]="search" matInput placeholder="Buscar...">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="row-cols-1" style="margin-top: 16px; margin-bottom: 16px;">
+        <mat-divider></mat-divider>
+    </div>
+    <div class="row-cols-1">
+        <mat-card>
+            <mat-card-title>
+                <div class="d-flex justify-content-between">
+                    <span>La Gente Necesita</span>
+                    <button mat-raised-button color="primary">
+                        Yo Necesito
+                    </button>
+                </div>
+                <br/>
+                <mat-divider></mat-divider>
+            </mat-card-title>
+            <mat-card-content>
+                <br />
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let req of requests">
+                        <div class="row" style="width: 100%;">
+                            <div class="col-12 d-flex justify-content-between">
+                                <div>
+                                    <span class="mat-card-title">
+                                        {{ req.description }}
+                                    </span>
+                                    <span class="mat-card-subtitle">
+                                        {{ req.timestamp.toDate().getDate() }} / {{ req.timestamp.toDate().getMonth() }}
+                                        / {{ req.timestamp.toDate().getFullYear() }}
+                                    </span>
+                                </div>
+                                <mat-chip-list>
+                                    <mat-chip color="accent" [routerLink]="['/search/category', req.categoryReference.id]" >{{ req.categoryName }}</mat-chip>
+                                </mat-chip-list>
+                            </div>
+                            <div class="col-12 text-right">
+                            </div>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
